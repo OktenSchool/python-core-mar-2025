@@ -71,6 +71,8 @@ car_2 = dict(manufacturer='bmw', model='650', volume=5, status=False)
 #
 # print(even_numbers)
 
-with open('tuple.txt') as file:
+with open('tuple.txt', encoding='utf-8') as file:
     for line in file:
         print(line)
+
+
