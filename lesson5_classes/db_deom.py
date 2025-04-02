@@ -4,7 +4,10 @@ import mysql.connector
 # connect = mysql.connector.connect(host='localhost', user='root', password='rootroot', database='world')
 
 def connection_to_databse(database, table):
-    connect = mysql.connector.connect(host='localhost', user='root', password='rootroot', database=database)
+
+    connection_data = {'host': 'localhost', 'user': 'root', 'password': 'rootroot', 'database': database}
+
+    connect = mysql.connector.connect(**connection_data)
     if connect.is_connected():
         print('Connected to MySQL Server')
         cursor = connect.cursor()
@@ -16,6 +19,7 @@ def connection_to_databse(database, table):
 
     connect.close()
 
-connection_to_databse('world','city')
-connection_to_databse('sakila','actor')
-connection_to_databse('sys','sys_config')
+
+connection_to_databse('world', 'city')
+connection_to_databse('sakila', 'actor')
+connection_to_databse('sys', 'sys_config')
